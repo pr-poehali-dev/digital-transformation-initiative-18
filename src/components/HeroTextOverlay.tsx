@@ -10,12 +10,12 @@ export default function HeroTextOverlay() {
           paintOrder: "stroke fill",
         }}
       >
-        МАКС
+        FUN LS
       </h1>
       <p className="text-foreground font-mono text-sm md:text-base max-w-xs tracking-widest lg:text-base">
-        Ваш надежный гид
+        Английское лето 2026:
         <br />
-        в мире баз данных
+        Прорыв, который заметят в сентябре!
       </p>
     </div>
   )
