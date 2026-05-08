@@ -1,56 +1,14 @@
-import { Suspense, useState } from "react"
-import Spline from "@splinetool/react-spline"
+const MASCOT_URL = "https://cdn.poehali.dev/projects/5fbe0796-d856-4bd0-b6dd-21d3b9f293d9/bucket/5d97958f-99b6-4bf7-aa99-ef301e88103d.JPG"
 
 export default function SplineScene() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
-
-  const handleLoad = () => {
-    console.log("Spline scene loaded successfully")
-    setIsLoading(false)
-    setHasError(false)
-  }
-
-  const handleError = (error: unknown) => {
-    console.log("Spline scene failed to load:", error)
-    setIsLoading(false)
-    setHasError(true)
-  }
-
   return (
-    <div className="absolute inset-0 w-full h-full bg-background">
-      {isLoading && (
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <div className="text-foreground text-center">
-            <div className="text-lg mb-2">Загрузка 3D сцены...</div>
-            <div className="text-sm opacity-70">Пожалуйста, подождите</div>
-          </div>
-        </div>
-      )}
-
-      {hasError && (
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <div className="text-foreground text-center">
-            <div className="text-lg mb-2">3D сцена недоступна</div>
-            <div className="text-sm opacity-70">Не удалось загрузить 3D модель</div>
-          </div>
-        </div>
-      )}
-
-      {!hasError && (
-        <Suspense fallback={null}>
-          <Spline
-            scene="https://prod.spline.design/l8gr6AhxxCqDIdBx/scene.splinecode"
-            onLoad={handleLoad}
-            onError={handleError}
-            style={{
-              width: "100%",
-              height: "100%",
-              background: "transparent",
-            }}
-          />
-        </Suspense>
-      )}
+    <div className="absolute inset-0 w-full h-full bg-background flex items-center justify-end pr-8 md:pr-16">
+      <img
+        src={MASCOT_URL}
+        alt="FunLS маскот — осьминог"
+        className="h-[420px] md:h-[540px] object-contain drop-shadow-2xl select-none"
+        style={{ filter: "drop-shadow(0 0 40px rgba(147,100,255,0.35))" }}
+      />
     </div>
   )
 }
