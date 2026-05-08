@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Upload GLB from Google Drive to S3",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"url": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
