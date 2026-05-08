@@ -137,15 +137,16 @@
 
 .mascot-img {
   animation: mascot-wobble 6s ease-in-out infinite;
-  filter: drop-shadow(0 8px 32px rgba(147, 80, 255, 0.5))
-    drop-shadow(0 0 80px rgba(147, 80, 255, 0.2));
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 8px 32px rgba(147, 80, 255, 0.6))
+    drop-shadow(0 0 80px rgba(147, 80, 255, 0.25)) contrast(1.05) saturate(1.15);
   transform-origin: center bottom;
   transition: filter 0.3s ease;
 }
 
 .mascot-img:hover {
-  filter: drop-shadow(0 12px 48px rgba(147, 80, 255, 0.75))
-    drop-shadow(0 0 100px rgba(255, 196, 0, 0.3));
+  filter: drop-shadow(0 12px 48px rgba(147, 80, 255, 0.8))
+    drop-shadow(0 0 100px rgba(255, 196, 0, 0.35)) contrast(1.05) saturate(1.25);
   animation: mascot-wobble 1.5s ease-in-out infinite;
 }
 
